@@ -87,7 +87,7 @@ item --gap -- Boot iso over iVentoy Boot Server ---
 item iVentoy ${spece} Boot iVentoy Iso Server
 
 item --gap--  ------------------------------------ Recovery Tools -----------------------------------------------
-	item clonezilla	$(space) Clonzilla
+	item clonezilla	${space} Clonzilla
 
 item --gap--            --------------------------------------------- iPXE Tools: --------------------------------------------
 	item view            ${space} Network setting
