@@ -79,8 +79,9 @@ item --gap --            ---------------------------------------- Just a simple 
 	item cz              ${space} netboot.cz
 	item salstar         ${space} boot.salstar.sk
 	item localboot	     ${space} Boot from local storage
-item --gap --  Boot Thin Client ---
+item --gap --  Boot Thin Client and install manjaro ---
 	item thinclient	${spece} Boot Alpin Thine Client
+item manjaro	${spece} Install Manjaro
 
 item --gap -- Boot iso over iVentoy Boot Server ---
 item iVentoy ${spece} Boot iVentoy Iso Server
