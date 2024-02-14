@@ -74,7 +74,7 @@ set sp:hex 20
 set sp ${sp:string}
 
 menu Welcome to the Legacy BIOS Boot Menu. Booted in [ ${arch} ] mode because CPU arch is detected as [ ${archl} ]
-item --gap --            ---------------------------------------- Just a simple menu: -----------------------------------------
+item --gap--            ---------------------------------------- Just a simple menu: -----------------------------------------
 	item xyz             ${space} netboot.xyz
 	item cz              ${space} netboot.cz
 	item salstar         ${space} boot.salstar.sk
