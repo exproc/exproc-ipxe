@@ -79,7 +79,7 @@ item --gap--            ---------------------------------------- Just a simple m
 	item cz              ${space} netboot.cz
 	item salstar         ${space} boot.salstar.sk
 	item localboot	     ${space} Boot from local storage
-item --gap --  Boot Thin Client and install manjaro ---
+item --gap--  Boot Thin Client and install manjaro ---
 	item thinclient	${spece} Boot Alpin Thine Client
 item manjaro	${spece} Install Manjaro
 
