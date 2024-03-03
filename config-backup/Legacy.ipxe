@@ -109,11 +109,7 @@ chain --autofree http://netboot.cz/dl/netboot.lkrn || goto failed
 chain --autofree http://boot.salstar.sk/ipxe/ipxe.lkrn || goto failed
 
 :thinclient
-set next-server 192.168.22.9 
-set filename ipxe.pxe
-set net0.dhcp/filename:string ipxe.pxe
-set proxydhcp/filename:string ipxe.pxe
-chain ipxe.pxe
+chain --autofree http://192.168.22.9/ipxe.pxe || goto failed
 
 :iVentoy
 chain --autofree tftp://192.168.22.20/iventoy_loader_16000_bios || goto failed
