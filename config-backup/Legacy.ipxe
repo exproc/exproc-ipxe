@@ -116,15 +116,17 @@ chain --autofree tftp://192.168.22.20/iventoy_loader_16000_bios || goto failed
 
 :manjaro
 set url    http://192.168.22.207/
+set initrd ${url}initrd/
 set iso    ${url}iso/
+set kernel ${url}kernel/
+set ucode  ${url}ucode/
 
-kernel  http://192.168.22.207/manjaro/21.3.2/vmlinuz-x86_64
-initrd  http://192.168.22.207/manjaro/21.3.2/amd_ucode.img
-initrd  http://192.168.22.207/manjaro/21.3.2/intel_ucode.img
-initrd  http://192.168.22.207/manjaro/21.3.2/initramfs-x86_64.img
-imgargs vmlinuz-x86_64 initrd=amd_ucode.img initrd=intel_ucode.img initrd=initramfs-x86_64.img miso_http_srv=http://192.168.22.207/iso ip=dhcp
+kernel ${kernel}manjaro/boot/vmlinuz-linux
+initrd ${ucode}manjaro/boot/amd-ucode.img
+initrd ${ucode}manjaro/boot/intel-ucode.img
+initrd ${initrd}manjaro/boot/initramfs-linux.img
+imgargs vmlinuz-linux initrd=amd-ucode.img initrd=intel-ucode.img initrd=initramfs-linux.img archiso_http_srv=${iso}manjaro/21.3.2/x86_64/ ip=dhcp
 boot
-
 
 
 
