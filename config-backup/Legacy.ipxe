@@ -23,7 +23,7 @@ cpuid --ext 29 && set archl x86_64 || set archl i386
 
 # Set graphics mode and configure colours
 #console --x 800 --y 600 --picture riddick.png
-console --x 800 --y 600 --picture  http://op.ccchalifo.net/riddick.png
+#console --x 800 --y 600 --picture  http://op.ccchalifo.net/riddick.png
 colour --basic 3 --rgb 0xffaa44 3
 cpair --foreground 0 --background 3 2
 cpair --foreground 3 3
