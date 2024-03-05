@@ -32,7 +32,7 @@ cpair --foreground 4 4 ||
 cpuid --ext 29 && set arch x86_64 || set arch i386 echo ${platform} ${arch}
 # Set graphics mode and configure colours
 #console --x 800 --y 600 --picture riddick.png
-console --x 800 --y 600 --picture  http://op.ccchalifo.net/riddick.png
+#console --x 800 --y 600 --picture  http://op.ccchalifo.net/riddick.png
 #console --x 800 --y 600 --picture  http://op.home.arpa/riddick.png
 #console --x 800 --y 600 --picture  http://op.ccchalifo.net/riddick.png
 #console --x 800 --y 600 --picture  http://boot/riddick.png
