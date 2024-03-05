@@ -79,8 +79,7 @@ item --gap--            ---------------------------------------- Just a simple m
 	item cz              ${space} netboot.cz
 	item salstar         ${space} boot.salstar.sk
 	item localboot	     ${space} Boot from local storage
-item --gap--  Boot Thin Client and install manjaro ---
-	item thinclient	${spece} Boot Alpin Thine Client
+
 item manjaro	${spece} Install Manjaro
 
 item --gap-- Boot iso over iVentoy Boot Server ---
@@ -108,8 +107,7 @@ chain --autofree http://netboot.cz/dl/netboot.lkrn || goto failed
 :salstar
 chain --autofree http://boot.salstar.sk/ipxe/ipxe.lkrn || goto failed
 
-:thinclient
-chain --autofree http://192.168.22.9/ipxe.pxe || goto failed
+
 
 :iVentoy
 chain --autofree tftp://192.168.22.20/iventoy_loader_16000_bios || goto failed
