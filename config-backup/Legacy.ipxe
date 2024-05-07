@@ -22,6 +22,7 @@ item --key u ubuntu       Boot Ubuntu from iSCSI
 item --key v vmware       Boot VMware ESXi from iSCSI
 item --key w windows7     Boot Windows 7 from iSCSI
 item manj                 Boot Manjaro Os
+tem xfce                  Boot Manjaro Xfce Os
 item --key l menu-live    Live environments...
 item --gap --             ------------------------- Tools and utilities ----------------------------
 item --key p pxelinux     Load PXELinux menu
@@ -115,6 +116,23 @@ initrd ${initrd}manjaro/boot/initramfs-linux.img
 imgargs vmlinuz-linux initrd=amd-ucode.img initrd=intel-ucode.img initrd=initramfs-linux.img archiso_http_srv=${iso}manjaro/21.3.2/x86_64/ ip=dhcp
 boot || goto failed
 goto start
+
+
+:xfce
+set url    https://iso.cchalifo.click/
+set initrd ${url}initrd/
+set iso    ${url}os/
+set kernel ${url}kernel/
+set ucode  ${urll}ucode/
+
+kernel ${kernel}manjaro-xfce/vmlinuz-linux
+initrd ${ucode}manjaro-xfce/amd-ucode.img
+initrd ${ucode}manjaro-xfce/intel-ucode.img
+initrd ${initrd}manjaro-xfce/initramfs-linux.img
+imgargs vmlinuz-linux initrd=amd-ucode.img initrd=intel-ucode.img initrd=initramfs-linux.img archiso_http_srv=${iso}manjaro-xfce/ ip=dhcp
+boot || goto failed
+goto start
+
 
 :pxelinux
 set 210:string tftp://${next-server}/
