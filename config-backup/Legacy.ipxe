@@ -21,8 +21,7 @@ item --key m msdos        Boot MS-DOS from iSCSI
 item --key u ubuntu       Boot Ubuntu from iSCSI
 item --key v vmware       Boot VMware ESXi from iSCSI
 item --key w windows7     Boot Windows 7 from iSCSI
-item manj                 Boot Manjaro Os
-item xfce                  Boot Manjaro Xfce Os
+item xfce                 Boot Manjaro Xfce Os
 item --key l menu-live    Live environments...
 item --gap --             ------------------------- Tools and utilities ----------------------------
 item --key p pxelinux     Load PXELinux menu
@@ -102,22 +101,6 @@ set root-path ${base-iscsi}:${hostname}.boot.windows7
 sanboot ${root-path} || goto failed
 goto start
 
-:manj
-set urll    http://192.168.22.207/
-set initrd ${urll}initrd/
-set iso    ${urll}iso/
-set kernel ${urll}kernel/
-set ucode  ${urll}ucode/
-
-kernel ${kernel}manjaro/boot/vmlinuz-linux
-initrd ${ucode}manjaro/boot/amd-ucode.img
-initrd ${ucode}manjaro/boot/intel-ucode.img
-initrd ${initrd}manjaro/boot/initramfs-linux.img
-imgargs vmlinuz-linux initrd=amd-ucode.img initrd=intel-ucode.img initrd=initramfs-linux.img archiso_http_srv=${iso}manjaro/21.3.2/x86_64/ ip=dhcp
-boot || goto failed
-goto start
-
-
 :xfce
 set url    https://iso.cchalifo.click/
 set initrd ${url}initrd/
@@ -132,6 +115,9 @@ initrd ${initrd}manjaro-xfce/initramfs-linux.img
 imgargs vmlinuz-linux initrd=amd-ucode.img initrd=intel-ucode.img initrd=initramfs-linux.img archiso_http_srv=${iso}manjaro-xfce/ ip=dhcp
 boot || goto failed
 goto start
+
+
+
 
 
 :pxelinux
