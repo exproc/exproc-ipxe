@@ -22,7 +22,7 @@ item --key u ubuntu       Boot Ubuntu from iSCSI
 item --key v vmware       Boot VMware ESXi from iSCSI
 item --key w windows7     Boot Windows 7 from iSCSI
 item manj                 Boot Manjaro Os
-tem xfce                  Boot Manjaro Xfce Os
+item xfce                  Boot Manjaro Xfce Os
 item --key l menu-live    Live environments...
 item --gap --             ------------------------- Tools and utilities ----------------------------
 item --key p pxelinux     Load PXELinux menu
