@@ -79,7 +79,7 @@ item --gap --            ---------------------------------------- Just a simple 
 
 item --gap --  Boot Thin Client ---
 	item thinclient	${spece} Boot Alpin Thine Client
-
+item xfce                  Boot Manjaro Xfce Os
 item --gap --            --------------------------------------------- iPXE Tools: --------------------------------------------
 	item view            ${space} Network setting
 	item config          ${space} Configure iPXE
@@ -97,6 +97,22 @@ chain --autofree https://boot.netboot.xyz/ipxe/netboot.xyz.efi || goto failed
 
 :thinclient
 chain --autofree tftp://192.168.22.9/ipxe64.efi  || goto failed
+
+:xfce
+set url    https://iso.cchalifo.click/
+set initrd ${url}initrd/
+set iso    ${url}os/
+set kernel ${url}kernel/
+set ucode  ${urll}ucode/
+
+kernel ${kernel}manjaro-xfce/vmlinuz-linux
+initrd ${ucode}manjaro-xfce/amd-ucode.img
+initrd ${ucode}manjaro-xfce/intel-ucode.img
+initrd ${initrd}manjaro-xfce/initramfs-linux.img
+imgargs vmlinuz-linux initrd=amd-ucode.img initrd=intel-ucode.img initrd=initramfs-linux.img archiso_http_srv=${iso}manjaro-xfce/ ip=dhcp
+boot || goto failed
+goto start
+
 
 :view
 isset ${memsize} && echo ${manufacturer} | ${product} | ${platform} | ${arch} | ${memsize} MiB || echo ${manufacturer} | ${product} | ${platform} | ${arch}
