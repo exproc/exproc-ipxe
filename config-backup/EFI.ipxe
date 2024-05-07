@@ -76,10 +76,11 @@ menu Welcome to the EFI Boot Menu. Booted in [ ${arch} ] mode because CPU arch i
 item --gap --            ---------------------------------------- Just a simple menu: -----------------------------------------
 	item xyz             ${space} netboot.xyz
 	item localboot	     ${space} Boot from local storage
+        item xfce            ${space}      Boot Manjaro Xfce Os
 
 item --gap --  Boot Thin Client ---
 	item thinclient	${spece} Boot Alpin Thine Client
-item xfce                  Boot Manjaro Xfce Os
+
 item --gap --            --------------------------------------------- iPXE Tools: --------------------------------------------
 	item view            ${space} Network setting
 	item config          ${space} Configure iPXE
